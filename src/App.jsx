@@ -28,11 +28,15 @@ function ImageUploader() {
     try {
       setLoading(true);
 
-      const response = await axios.post("http://localhost:3000/", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axios.post(
+        "https://image-caption-backend.onrender.com/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
       // Split the string into an array of captions
       const captionsArray = response.data.chatCompletion
