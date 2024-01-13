@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
-import bgvideo from "./assets/pexels-cottonbro-9694805 (Original).mp4";
+import bgvideo from "./assets/pexels-cottonbro-9694805 (Original)_Trim.mp4";
 
 function ImageUploader() {
   const [selectedFile, setSelectedFile] = useState(null);
