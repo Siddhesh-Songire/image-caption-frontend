@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
+import bgvideo from "./assets/pexels-cottonbro-9694805 (Original).mp4";
 
 function ImageUploader() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -62,7 +63,10 @@ function ImageUploader() {
   };
 
   return (
-    <>
+    <div className="outer">
+      <video className="background-video" autoPlay loop muted>
+        <source src={bgvideo} type="video/mp4" />
+      </video>
       <div className="god">
         <h1>Image Caption Generator</h1>
         <label className="file-input-container">
@@ -80,7 +84,7 @@ function ImageUploader() {
             {selectedFile ? "Image Selected" : "Give Image"}
           </span>
         </label>
-        <button onClick={handleUpload} disabled={loading}>
+        <button onClick={handleUpload} disabled={loading} className="button-64">
           Generate Captions
         </button>
       </div>
@@ -108,7 +112,7 @@ function ImageUploader() {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }
 
